@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-headline: var(--font-bricolage), system-ui;
+  --font-sans: var(--font-inter), system-ui;
+}
+
+:root {
+  --background: #000000;
+  --foreground: #ffffff;
+}
+
+body {
+  color: var(--foreground);
+  /* The layout or page component will set the product.gradient dynamically into a style attribute,
+     so we can define a fallback or base behavior here. */
+  background: var(--background);
+  transition: background 0.8s ease;
+  overflow-x: hidden;
+}
+
+/* Custom ::selection */
+::selection {
+  background-color: #f97316; /* Tailwind orange-500 */
+  color: #ffffff;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+* {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}

@@ -10,7 +10,7 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Tailwind CSS v4](https://img.shields.io/badge/Tailwind_CSS_v4-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![Framer Motion](https://img.shields.io/badge/Framer_Motion-black?style=for-the-badge&logo=framer&logoColor=blue)](https://www.framer.com/motion/)
-[![Turbopack](https://img.shields.io/badge/Turbopack-Ready-blueviolet?style=for-the-badge&logo=vercel)](https://turbo.build/)
+[![Vercel Deployment](https://img.shields.io/badge/Deployed_on-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://juicera-experience.vercel.app/)
 
 <br />
 
@@ -19,9 +19,15 @@
   Turn every scroll into a spin. Every drop into an experience.
 </p>
 
+<br />
+
+[![Live Demo](https://img.shields.io/badge/🔗_LIVE_DEMO-juicera--experience.vercel.app-00DC82?style=for-the-badge&logo=vercel&logoColor=white)](https://juicera-experience.vercel.app/)
+
+<br />
+
 ---
 
-### 🌐 [Explore Live Experience](#-getting-started) • 🍾 [The 3D Scrollytelling Engine](#-the-scrollytelling-canvas-engine) • 🍓 [Flavor Vault](#-the-flavor-vault) • ⚡ [Architecture](#-architecture--tech-stack)
+### 🌐 [Live Demo (juicera-experience.vercel.app)](https://juicera-experience.vercel.app/) • 🍾 [The 3D Scrollytelling Engine](#-the-scrollytelling-canvas-engine) • 🍓 [Flavor Vault](#-the-flavor-vault) • ⚡ [Architecture](#-architecture--tech-stack)
 
 ---
 
@@ -185,13 +191,13 @@ Creates an ultra-optimized, pre-rendered static export ready for CDN distributio
 
 <br />
 
-## 🛰️ Deployment
+## 🛰️ Deployment & Live URL
 
-Built for zero-configuration static deployment on edge networks:
+The project is continuously deployed on **Vercel** Edge Network:
 
-* **Netlify**: Pre-configured via `netlify.toml` (publishing `out/`)
-* **Vercel**: One-click import via standard Next.js preset
-* **Cloudflare Pages / GitHub Pages**: Deploy the generated static HTML `out` directory directly
+* 🔗 **Live Website**: [https://juicera-experience.vercel.app/](https://juicera-experience.vercel.app/)
+* **Preset**: Next.js (App Router, Static HTML Export)
+* **Automatic Deployments**: Pushes to `main` automatically trigger production deployments on Vercel.
 
 ---
 

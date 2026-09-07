@@ -133,47 +133,44 @@ export const ProductTextOverlays: React.FC<ProductTextOverlaysProps> = ({
   section4,
 }) => {
   return (
-    <div className="absolute inset-0 pointer-events-none z-10 w-full h-[500vh]">
-      <div className="sticky top-0 h-screen w-full relative overflow-hidden">
+    <div className="absolute inset-0 pointer-events-none z-10 w-full h-full overflow-hidden flex items-center justify-center">
+      {/* SECTION 1: HERO — 0.0 → 0.20 */}
+      <TextBlock
+        title={section1.title}
+        subtitle={section1.subtitle}
+        price={price}
+        features={features}
+        progress={progress}
+        range={[0.0, 0.05, 0.15, 0.20]}
+        type="hero"
+      />
 
-        {/* SECTION 1: HERO — 0.0 → 0.20 */}
-        <TextBlock
-          title={section1.title}
-          subtitle={section1.subtitle}
-          price={price}
-          features={features}
-          progress={progress}
-          range={[0.0, 0.05, 0.15, 0.20]}
-          type="hero"
-        />
+      {/* SECTION 2: LEFT — 0.22 → 0.45 */}
+      <TextBlock
+        title={section2.title}
+        subtitle={section2.subtitle}
+        progress={progress}
+        range={[0.22, 0.27, 0.40, 0.45]}
+        type="left"
+      />
 
-        {/* SECTION 2: LEFT — 0.22 → 0.45 */}
-        <TextBlock
-          title={section2.title}
-          subtitle={section2.subtitle}
-          progress={progress}
-          range={[0.22, 0.27, 0.40, 0.45]}
-          type="left"
-        />
+      {/* SECTION 3: RIGHT — 0.48 → 0.75 */}
+      <TextBlock
+        title={section3.title}
+        subtitle={section3.subtitle}
+        progress={progress}
+        range={[0.48, 0.53, 0.70, 0.75]}
+        type="right"
+      />
 
-        {/* SECTION 3: RIGHT — 0.48 → 0.75 */}
-        <TextBlock
-          title={section3.title}
-          subtitle={section3.subtitle}
-          progress={progress}
-          range={[0.48, 0.53, 0.70, 0.75]}
-          type="right"
-        />
-
-        {/* SECTION 4: CONCLUSION — 0.80 → 1.0 */}
-        <TextBlock
-          title={section4.title}
-          subtitle={section4.subtitle}
-          progress={progress}
-          range={[0.80, 0.85, 0.99, 1.0]}
-          type="conclusion"
-        />
-      </div>
+      {/* SECTION 4: CONCLUSION — 0.80 → 1.0 */}
+      <TextBlock
+        title={section4.title}
+        subtitle={section4.subtitle}
+        progress={progress}
+        range={[0.80, 0.85, 0.99, 1.0]}
+        type="conclusion"
+      />
     </div>
   );
 };

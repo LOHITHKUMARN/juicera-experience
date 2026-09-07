@@ -6,9 +6,7 @@ import { products } from "@/data/products";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { ProductTextOverlays } from "@/components/ProductTextOverlays";
-import { MangoBottleScroll } from "@/components/MangoBottleScroll";
-import { ChocolateBottleScroll } from "@/components/ChocolateBottleScroll";
-import { StrawberryBottleScroll } from "@/components/StrawberryBottleScroll";
+import { ProductBottleScroll } from "@/components/ProductBottleScroll";
 import { ArrowRight, Leaf, ShieldCheck } from "lucide-react";
 import Link from "next/link";
 
@@ -18,7 +16,7 @@ interface ProductPageClientProps {
 
 /**
  * ScrollytellingLayout
- * Isolated component to handle useScroll and text overlays safely after hydration.
+ * Pinned sticky viewport combining 3D canvas animation and synchronized text overlays.
  */
 function ScrollytellingLayout({ currentProduct }: { currentProduct: any }) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -27,20 +25,15 @@ function ScrollytellingLayout({ currentProduct }: { currentProduct: any }) {
     offset: ["start start", "end end"],
   });
 
-  const renderBottleScroll = () => {
-    switch (currentProduct.id) {
-      case "mango": return <MangoBottleScroll progress={scrollYProgress} />;
-      case "chocolate": return <ChocolateBottleScroll progress={scrollYProgress} />;
-      case "strawberry": return <StrawberryBottleScroll progress={scrollYProgress} />;
-      default: return <MangoBottleScroll progress={scrollYProgress} />;
-    }
-  };
-
   return (
     <div ref={containerRef} className="relative w-full h-[500vh]">
-      {renderBottleScroll()}
-      
-      <div className="absolute top-0 w-full h-[500vh] pointer-events-none">
+      {/* Pinned sticky viewport for the full 500vh scroll run */}
+      <div className="sticky top-0 h-screen w-full overflow-hidden flex items-center justify-center pointer-events-none z-0">
+        <ProductBottleScroll
+          key={currentProduct.id}
+          folderPath={currentProduct.folderPath}
+          progress={scrollYProgress}
+        />
         <ProductTextOverlays
           progress={scrollYProgress}
           price={currentProduct.price}
